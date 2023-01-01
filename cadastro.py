@@ -17,4 +17,3 @@ elif idade == 0:
     print('nós não permitimos menores de 6 anos em nosso site')
 else:
     print(f'seja bem-vindo {nome}!')
-    

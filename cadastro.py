@@ -1,19 +1,27 @@
-nome = input('ensira seu nome: ')
-idade = int(input('ensira a sua idade: '))
+import PySimpleGUI as sg
 
-if idade == 6:
-    print('nós não permitimos menores de 6 anos em nosso site')
-elif idade == 5:
-    print('nós não permitimos menores de 6 anos em nosso site')
-elif idade == 4:
-    print('nós não permitimos menores de 6 anos em nosso site')
-elif idade == 3:
-    print('nós não permitimos menores de 6 anos em nosso site')
-elif idade == 2:
-    print('nós não permitimos menores de 6 anos em nosso site')
-elif idade == 1:
-    print('nós não permitimos menores de 6 anos em nosso site')
-elif idade == 0:
-    print('nós não permitimos menores de 6 anos em nosso site')
-else:
-    print(f'seja bem-vindo {nome}!')
+sg.theme('Reddit')
+
+layout = [  [sg.Text('ensira o seu nome: '), sg.InputText(key='nome_do_usuario')],
+            [sg.Text('ensira a sua idade: '), sg.InputText(key='idade_do_usuario')],
+            [sg.Checkbox('salvar login?')],
+            [sg.Button('entrar'), sg.Button('Cancelar')] ,
+            [sg.Text('', key='resultado_da_formatação')]]
+
+
+window = sg.Window('login', layout)
+
+while True:
+    evento, valores = window.read()
+    if evento == sg.WIN_CLOSED or evento == 'Cancelar': 
+            break
+
+    if evento == 'entrar':
+        nome = valores['nome_do_usuario']
+        idade = valores['idade_do_usuario']
+
+
+
+        window['resultado_da_formatação'].update(f'seja bem-vindo {nome}, ao nosso site')
+
+window.close()

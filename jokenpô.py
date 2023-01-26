@@ -10,19 +10,19 @@ print("[1] stone - [2] paper - [3] scissors")
 print("=-"*18)
 p = int(input('enter your option here: '))
 randomm = r.choice(lista)
-# pedra
+# stone
 if randomm == p:
     print("A TIE")
 elif randomm == 1 and p == 2:
     print("you WON!")
 elif randomm == 1 and p == 3:
     print("you LOST")
-# papel
+# paper
 elif randomm == 2 and p == 3:
     print("you WON!")
 elif randomm == 2 and p == 1:
     print("you LOST")
-# tesoura
+# scissors
 elif randomm == 3 and p == 2:
     print("you LOST")
 elif randomm == 3 and p == 1:
